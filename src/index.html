@@ -12,11 +12,30 @@
     
   </head>
   <body>
-    
-
-
-    
-
+      <div class="container">
+          <div class="row">
+            <div>
+              <h1 class="text-center">Ethereum Voting Dapp</h1>
+              <hr/>
+              <br/>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+              <p>Add ID and click candidate to vote</p>
+              <div class="input-group mb-3">
+                <input type="text" class="form-control" id="id-input" placeholder="Enter ID">
+              </div>
+              <div class="candidate-box"></div>
+              <button class="btn btn-primary" onclick="App.vote()">Vote</button>
+              <div class="msg"></div>
+            </div>
+            <div class="col-md-6">
+                <button class="btn btn-primary" onclick="App.findNumOfVotes()">Count Votes</button>
+                <div id="vote-box"></div>
+            </div>
+          </div>
+        </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
