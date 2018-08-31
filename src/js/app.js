@@ -6,7 +6,9 @@ import { default as Web3} from "web3"
 import { default as contract } from "truffle-contract"
 // get build artifacts from compiled smart contract and create the truffle contract
 import votingArtifacts from "../../build/contracts/Voting.json"
+//import migrationsArtifacts from "../../build/contracts/Migrations.json"
 var VotingContract = contract(votingArtifacts)
+//var migrationsArtifacts = contract(migrationsArtifacts)
 
 
 /*
@@ -15,13 +17,15 @@ var VotingContract = contract(votingArtifacts)
 window.App = {
   // called when web3 is set up
   start: function() { 
+    //console.log("yeah");
     // setting up contract providers and transaction defaults for ALL contract instances
     VotingContract.setProvider(window.web3.currentProvider)
+    //console.log("yeah2");
     VotingContract.defaults({from: window.web3.eth.accounts[0],gas:6721975})
-
+    //console.log("yeah3");
     // creates an VotingContract instance that represents default address managed by VotingContract
     VotingContract.deployed().then(function(instance){
-
+    console.log("yeah4");
       // calls getNumOfCandidates() function in Smart Contract, 
       // this is not a transaction though, since the function is marked with "view" and
       // truffle contract automatically knows this
